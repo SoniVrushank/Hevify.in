@@ -1,0 +1,27 @@
+[[redirects]]
+  from = "/vrushh"
+  to = "/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"

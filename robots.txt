@@ -1,0 +1,11 @@
+# robots.txt for hevify.in
+# Generated for Hevify Labs - Digital Marketing Agency, Ahmedabad
+
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /vrushh
+
+Sitemap: https://hevify.in/sitemap.xml
