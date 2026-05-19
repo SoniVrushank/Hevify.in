@@ -29,9 +29,9 @@
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
     <ul id="nav-links" class="nav-links">
-      <li><a href="/">Home</a></li><li><a href="/#about">About</a></li><li><a href="/#services">Services</a></li><li><a href="/#packages">Packages</a></li><li><a href="/#team">Team</a></li><li><a href="/blog/">Blog</a></li><li><a href="/#contact">Contact</a></li>
+      <li><a href="/">Home</a></li><li><a href="/#about">About</a></li><li><a href="/#services">Services</a></li><li><a href="/#team">Team</a></li><li><a href="/blog/">Blog</a></li><li><a href="/#contact">Contact</a></li>
     </ul>
-    <a class="nav-cta" href="/contact/">Contact us</a>
+    <button class="nav-cta" type="button" data-open-contact>Contact us</button>
   </nav>
   <main id="main"><section class="hero">
     <div class="hero-bg-img" aria-hidden="true"></div>
@@ -39,7 +39,7 @@
       <p class="eyebrow">About Hevify Labs</p>
       <h1>Premium growth thinking,<br><em>built with restraint.</em></h1>
       <p class="hero-copy">Hevify Labs was founded by Vrushank Soni to help brands grow with sharper strategy, better content, cleaner ads, and stronger digital foundations.</p>
-      <div class="actions"><a class="btn-primary" href="/contact/">Contact us</a><a class="btn-outline" href="/services/">Explore Services</a></div>
+      <div class="actions"><button class="btn-primary" type="button" data-open-contact>Contact us</button><a class="btn-outline" href="/services/">Explore Services</a></div>
     </div>
   </section>
   <section><div class="sec-inner split"><div><div class="section-head reveal"><span class="sec-label">Founder Story</span><h2>Vrushank Soni built Hevify for brands tired of surface-level marketing.</h2><p>The agency is shaped around a simple belief: growth should feel strategic before it feels loud. Hevify helps teams find the right offer, message, audience, channel, and conversion path.</p></div></div><div class="quote-card reveal">Modern marketing should be simple to understand, premium to experience, and serious about performance.</div></div></section>
@@ -62,7 +62,7 @@
       </div>
       <div>
         <h2>Links</h2>
-        <a href="/blog/">Blogs</a><a href="/packages/">Packages</a><a href="/contact/">Contact us</a>
+        <a href="/blog/">Blogs</a><a href="/packages/">Packages</a><button class="footer-contact" type="button" data-open-contact>Contact us</button>
       </div>
     </div>
     <p class="fine">© 2026 Hevify Labs.</p>
@@ -77,6 +77,23 @@
       <div class="modal-cats" id="detail-cats"></div>
       <ul id="detail-list"></ul>
       <a class="btn-primary" id="detail-mail" href="mailto:hevify.in@gmail.com?subject=Service%20requirement%20enquiry%20%7C%20Hevify%20Labs&body=Hi%20Hevify%20Labs%2C%0A%0AI%20want%20to%20discuss%20my%20requirements.%0A%0AName%3A%0ABrand%3A%0APhone%3A%0AService%20%2F%20Package%3A%0ARequirement%3A%0A%0AThanks.">Mail us regarding your requirement</a>
+    </div>
+  </div>
+  <div class="modal-layer" id="contact-modal" aria-hidden="true">
+    <div class="detail-modal contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+      <button class="modal-close" type="button" data-close-contact>×</button>
+      <p class="sec-label">Lead Enquiry</p>
+      <h2 id="contact-title">Tell Hevify Labs what you need.</h2>
+      <form class="contact-form modal-form" id="mail-form">
+        <label>Name<input id="mail-name" name="name" autocomplete="name" required></label>
+        <label>Phone<input id="mail-phone" name="phone" autocomplete="tel" required></label>
+        <label>Brand<input id="mail-brand" name="brand" autocomplete="organization"></label>
+        <label>Email<input id="mail-email" type="email" name="email" autocomplete="email"></label>
+        <label>Requirement<select id="mail-service" name="service"><option>Social Media Growth</option><option>Performance Marketing</option><option>SEO &amp; Website Growth</option><option>General growth discussion</option></select></label>
+        <label>Message<textarea id="mail-message" name="message" rows="4" placeholder="Tell us your goal, city, budget range, and timeline."></textarea></label>
+        <button class="btn-primary" type="submit">Submit enquiry</button>
+        <p class="form-note">This opens your email app with the enquiry already drafted.</p>
+      </form>
     </div>
   </div>
   <script src="/assets/js/site.js" defer></script>

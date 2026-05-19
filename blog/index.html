@@ -29,9 +29,9 @@
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
     <ul id="nav-links" class="nav-links">
-      <li><a href="/">Home</a></li><li><a href="/#about">About</a></li><li><a href="/#services">Services</a></li><li><a href="/#packages">Packages</a></li><li><a href="/#team">Team</a></li><li><a href="/blog/">Blog</a></li><li><a href="/#contact">Contact</a></li>
+      <li><a href="/">Home</a></li><li><a href="/#about">About</a></li><li><a href="/#services">Services</a></li><li><a href="/#team">Team</a></li><li><a href="/blog/">Blog</a></li><li><a href="/#contact">Contact</a></li>
     </ul>
-    <a class="nav-cta" href="/contact/">Contact us</a>
+    <button class="nav-cta" type="button" data-open-contact>Contact us</button>
   </nav>
   <main id="main"><section class="hero">
     <div class="hero-bg-img" aria-hidden="true"></div>
@@ -39,7 +39,7 @@
       <p class="eyebrow">Hevify Blog</p>
       <h1>Guides for sharper<br><em>digital growth.</em></h1>
       <p class="hero-copy">Read practical insights on performance marketing, social media, SEO, paid ads, lead generation, content, and branding.</p>
-      <div class="actions"><a class="btn-primary" href="/contact/">Contact us</a><a class="btn-outline" href="/services/">Explore Services</a></div>
+      <div class="actions"><button class="btn-primary" type="button" data-open-contact>Contact us</button><a class="btn-outline" href="/services/">Explore Services</a></div>
     </div>
   </section>
   <section><div class="sec-inner"><div class="section-head reveal"><span class="sec-label">Featured Articles</span><h2>Static articles, built for search.</h2><p>Each article has its own URL under /blogs/, metadata, article schema, FAQ schema, breadcrumbs, related reading, and service links.</p></div><div class="blog-grid"><article class="blog-card reveal"><span>Guide</span><h2><a href="/blogs/performance-marketing-guide/">Complete Guide to Performance Marketing</a></h2><p>Performance marketing is not just paid ads. It is a disciplined way to connect spend, message, landing page, and revenue into one accountable system.</p><a href="/blogs/performance-marketing-guide/">Read article</a></article><article class="blog-card reveal"><span>Guide</span><h2><a href="/blogs/social-media-growth-strategy/">Social Media Growth Strategy for Modern Brands</a></h2><p>Modern social growth comes from positioning, consistency, creative testing, and a point of view that your audience can remember.</p><a href="/blogs/social-media-growth-strategy/">Read article</a></article><article class="blog-card reveal"><span>Guide</span><h2><a href="/blogs/meta-ads-for-leads/">Meta Ads for Lead Generation</a></h2><p>Meta Ads can produce high quality leads when the offer, audience, creative, and follow-up system are built together.</p><a href="/blogs/meta-ads-for-leads/">Read article</a></article><article class="blog-card reveal"><span>Guide</span><h2><a href="/blogs/google-ads-vs-meta-ads/">Google Ads vs Meta Ads</a></h2><p>Google captures demand. Meta creates and redirects attention. Strong brands know when to use each channel.</p><a href="/blogs/google-ads-vs-meta-ads/">Read article</a></article><article class="blog-card reveal"><span>Guide</span><h2><a href="/blogs/seo-for-local-business/">SEO for Local Businesses</a></h2><p>Local SEO helps service businesses become easier to find, easier to trust, and easier to choose.</p><a href="/blogs/seo-for-local-business/">Read article</a></article><article class="blog-card reveal"><span>Guide</span><h2><a href="/blogs/content-marketing-strategy/">Content Marketing Strategies That Convert</a></h2><p>Content converts when it answers real buyer questions, supports search intent, and gives sales teams useful proof.</p><a href="/blogs/content-marketing-strategy/">Read article</a></article><article class="blog-card reveal"><span>Guide</span><h2><a href="/blogs/digital-marketing-ahmedabad/">How Digital Marketing Agencies Drive Growth in Ahmedabad</a></h2><p>Ahmedabad brands need digital partners who understand local trust, fast-moving markets, and measurable acquisition.</p><a href="/blogs/digital-marketing-ahmedabad/">Read article</a></article><article class="blog-card reveal"><span>Guide</span><h2><a href="/blogs/personal-branding-guide/">Personal Branding in 2026</a></h2><p>Personal branding is now a serious growth channel for founders, consultants, and creators who need trust before a sale.</p><a href="/blogs/personal-branding-guide/">Read article</a></article><article class="blog-card reveal"><span>Guide</span><h2><a href="/blogs/instagram-growth-guide/">Instagram Growth Guide for Brands</a></h2><p>Instagram growth comes from useful creative, clear content pillars, and consistent storytelling rather than random posting.</p><a href="/blogs/instagram-growth-guide/">Read article</a></article><article class="blog-card reveal"><span>Guide</span><h2><a href="/blogs/lead-generation-funnel/">Lead Generation Funnel Blueprint</a></h2><p>A good lead funnel aligns offer, ad promise, landing experience, response speed, and sales qualification.</p><a href="/blogs/lead-generation-funnel/">Read article</a></article></div></div></section></main>
@@ -59,7 +59,7 @@
       </div>
       <div>
         <h2>Links</h2>
-        <a href="/blog/">Blogs</a><a href="/packages/">Packages</a><a href="/contact/">Contact us</a>
+        <a href="/blog/">Blogs</a><a href="/packages/">Packages</a><button class="footer-contact" type="button" data-open-contact>Contact us</button>
       </div>
     </div>
     <p class="fine">© 2026 Hevify Labs.</p>
@@ -74,6 +74,23 @@
       <div class="modal-cats" id="detail-cats"></div>
       <ul id="detail-list"></ul>
       <a class="btn-primary" id="detail-mail" href="mailto:hevify.in@gmail.com?subject=Service%20requirement%20enquiry%20%7C%20Hevify%20Labs&body=Hi%20Hevify%20Labs%2C%0A%0AI%20want%20to%20discuss%20my%20requirements.%0A%0AName%3A%0ABrand%3A%0APhone%3A%0AService%20%2F%20Package%3A%0ARequirement%3A%0A%0AThanks.">Mail us regarding your requirement</a>
+    </div>
+  </div>
+  <div class="modal-layer" id="contact-modal" aria-hidden="true">
+    <div class="detail-modal contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+      <button class="modal-close" type="button" data-close-contact>×</button>
+      <p class="sec-label">Lead Enquiry</p>
+      <h2 id="contact-title">Tell Hevify Labs what you need.</h2>
+      <form class="contact-form modal-form" id="mail-form">
+        <label>Name<input id="mail-name" name="name" autocomplete="name" required></label>
+        <label>Phone<input id="mail-phone" name="phone" autocomplete="tel" required></label>
+        <label>Brand<input id="mail-brand" name="brand" autocomplete="organization"></label>
+        <label>Email<input id="mail-email" type="email" name="email" autocomplete="email"></label>
+        <label>Requirement<select id="mail-service" name="service"><option>Social Media Growth</option><option>Performance Marketing</option><option>SEO &amp; Website Growth</option><option>General growth discussion</option></select></label>
+        <label>Message<textarea id="mail-message" name="message" rows="4" placeholder="Tell us your goal, city, budget range, and timeline."></textarea></label>
+        <button class="btn-primary" type="submit">Submit enquiry</button>
+        <p class="form-note">This opens your email app with the enquiry already drafted.</p>
+      </form>
     </div>
   </div>
   <script src="/assets/js/site.js" defer></script>
