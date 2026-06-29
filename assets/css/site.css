@@ -960,6 +960,105 @@ body.theme-dark .faq p{color:#aab5ad}
 body.theme-dark .glass-dock__spark{color:#9dc49c}
 body.theme-dark .glass-dock__arrow{color:#9dc49c}
 
+/* ---------- Late Overrides: softer dark mode + compact blog tiles ---------- */
+.insights-band .card-grid{
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+.blog-tile{
+  display:flex;
+  flex-direction:column;
+  gap:.8rem;
+}
+.blog-tile img{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  border-radius:18px;
+  background:linear-gradient(135deg,rgba(74,124,89,.16),rgba(156,205,119,.22));
+}
+.blog-tile a{font-weight:700;color:var(--green)}
+.glass-dock__wa{
+  cursor:pointer;
+  box-shadow:0 10px 28px rgba(37,211,102,.18),inset 0 1px 0 rgba(255,255,255,.42);
+}
+.glass-dock__wa::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.35),transparent 32%);
+  pointer-events:none;
+  opacity:.7;
+}
+.glass-dock__wa{position:relative;overflow:hidden}
+
+body.theme-dark{
+  background:linear-gradient(180deg,#f2f5ef 0%,#e7eee2 100%);
+  color:#223028;
+}
+body.theme-dark .site-nav,
+body.theme-dark .site-nav.scrolled,
+body.theme-dark .glass-pill,
+body.theme-dark .glass-dock__pill,
+body.theme-dark .glass-footer,
+body.theme-dark .glass-sheet__panel,
+body.theme-dark .detail-modal,
+body.theme-dark .contact-form input,
+body.theme-dark .contact-form textarea,
+body.theme-dark .contact-form select,
+body.theme-dark .glass-form input,
+body.theme-dark .glass-form textarea{
+  background:rgba(255,255,255,.82);
+  color:#223028;
+}
+body.theme-dark .hero,
+body.theme-dark .band,
+body.theme-dark .connect-band,
+body.theme-dark .dark-band,
+body.theme-dark .ai-band{
+  background:linear-gradient(180deg,#f2f5ef 0%,#e6ede1 100%);
+}
+body.theme-dark .hero h1,
+body.theme-dark .section-head h2,
+body.theme-dark .soft-card h3,
+body.theme-dark .folder-card h3,
+body.theme-dark .connect-box h3,
+body.theme-dark .review-card strong,
+body.theme-dark .pkg-card h4,
+body.theme-dark .pkg-card strong,
+body.theme-dark .detail-modal h2,
+body.theme-dark .glass-sheet__panel h2{
+  color:#18221d;
+}
+body.theme-dark .hero h1 em,
+body.theme-dark .sec-label,
+body.theme-dark .eyebrow,
+body.theme-dark .glass-sheet__eyebrow,
+body.theme-dark .glass-sheet__category,
+body.theme-dark .brand small,
+body.theme-dark .glass-dock__spark,
+body.theme-dark .glass-dock__arrow{
+  color:#4a7c59;
+}
+body.theme-dark .hero-copy,
+body.theme-dark .section-head p,
+body.theme-dark .soft-card p,
+body.theme-dark .service-row p,
+body.theme-dark .connect-box p,
+body.theme-dark .review-card p,
+body.theme-dark .pkg-card ul,
+body.theme-dark .pkg-note,
+body.theme-dark .quote-card,
+body.theme-dark .service-row em,
+body.theme-dark .glass-sheet__copy,
+body.theme-dark .glass-sheet__meta{
+  color:#5f6b63;
+}
+body.theme-dark .glass-dock__wa{
+  color:#2ca95d;
+  border-color:rgba(37,211,102,.35);
+}
+
 /* ---------- Responsive ---------- */
 
 /* Tablet */

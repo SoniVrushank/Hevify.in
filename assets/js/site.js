@@ -1,6 +1,6 @@
 const WHATSAPP_URL = "https://wa.me/+919429428370";
 const WHATSAPP_TEXT = "Hi Hevify Labs, I want to discuss my requirements.";
-const DOCK_INTERVAL = 7000;
+const DOCK_INTERVAL = 10000;
 const DOCK_ITEMS = [
   {
     category: "Featured Blog",
@@ -69,6 +69,7 @@ const DOCK_ITEMS = [
 ];
 
 const nav = document.querySelector(".site-nav");
+const navLinks = document.querySelector(".nav-links");
 const themeToggle = document.querySelector(".theme-toggle");
 const body = document.body;
 const onScroll = () => {
@@ -342,3 +343,16 @@ waForm?.addEventListener("submit", (event) => {
 if (dockTitle && dockMeta && blogSheetImage && blogSheetCategory && blogSheetTitle && blogSheetCopy && blogSheetReading && blogSheetCta) {
   startDockRotation();
 }
+
+document.querySelectorAll(".pkg-wrap").forEach((wrap) => {
+  if (!wrap.closest(".featured-card")) return;
+  const btn = wrap.querySelector(".pkg-toggle");
+  const panel = wrap.querySelector(".pkg-panel");
+  const chevron = wrap.querySelector(".chevron");
+  if (!btn || !panel) return;
+  btn.setAttribute("aria-expanded", "true");
+  panel.classList.add("open");
+  panel.style.maxHeight = `${panel.scrollHeight}px`;
+  panel.style.opacity = "1";
+  if (chevron) chevron.style.transform = "rotate(90deg)";
+});
