@@ -1,5 +1,72 @@
 const WHATSAPP_URL = "https://wa.me/+919429428370";
 const WHATSAPP_TEXT = "Hi Hevify Labs, I want to discuss my requirements.";
+const DOCK_INTERVAL = 7000;
+const DOCK_ITEMS = [
+  {
+    category: "Featured Blog",
+    title: "5 AI Tools Every Marketer Should Be Using in 2025",
+    copy: "Discover practical tools that save time, improve productivity, and make marketing workflows lighter.",
+    reading: "4 min read",
+    href: "/blogs/performance-marketing-guide/",
+    image: "/favicon.webp"
+  },
+  {
+    category: "Case Study",
+    title: "Case Study: 4x ROAS with a Cleaner Funnel",
+    copy: "A tighter offer, faster landing page, and stronger retargeting can unlock better efficiency without wasted spend.",
+    reading: "5 min read",
+    href: "/case-studies/",
+    image: "/favicon.webp"
+  },
+  {
+    category: "Marketing Insight",
+    title: "Why Ads Stop Scaling",
+    copy: "When creative, landing pages, and follow-up drift apart, performance plateaus even if spend increases.",
+    reading: "3 min read",
+    href: "/blog/",
+    image: "/favicon.webp"
+  },
+  {
+    category: "AI Tip",
+    title: "Build Faster With Small AI Workflows",
+    copy: "Use focused automations for follow-ups, reporting, and research instead of trying to automate everything at once.",
+    reading: "3 min read",
+    href: "/blog/",
+    image: "/favicon.webp"
+  },
+  {
+    category: "Free Resource",
+    title: "Landing Page Checklist for Better Conversions",
+    copy: "A simple structure that keeps the page focused, fast, and easy to scan on mobile.",
+    reading: "2 min read",
+    href: "/blog/",
+    image: "/favicon.webp"
+  },
+  {
+    category: "Client Success",
+    title: "How a Local Brand Turned Content Into Inquiries",
+    copy: "A sharper message and more consistent posts made it easier for people to understand the offer and act.",
+    reading: "4 min read",
+    href: "/case-studies/",
+    image: "/favicon.webp"
+  },
+  {
+    category: "SEO Tip",
+    title: "Make One Page Answer One Intent",
+    copy: "Matching a page to one search intent usually improves clarity, engagement, and rankings at the same time.",
+    reading: "3 min read",
+    href: "/seo-services/",
+    image: "/favicon.webp"
+  },
+  {
+    category: "Content Strategy",
+    title: "Plan Content Around Buying Signals",
+    copy: "Create posts that help people move from curiosity to action with fewer jumps and less friction.",
+    reading: "4 min read",
+    href: "/blog/",
+    image: "/favicon.webp"
+  }
+];
 
 const navLinks = document.querySelector(".nav-links");
 
@@ -8,6 +75,8 @@ function closeMenu() {
 }
 
 const nav = document.querySelector(".site-nav");
+const themeToggle = document.querySelector(".theme-toggle");
+const body = document.body;
 const onScroll = () => {
   nav?.classList.toggle("scrolled", window.scrollY > 24);
   if (navLinks?.classList.contains("open")) closeMenu();
@@ -42,6 +111,13 @@ const io = "IntersectionObserver" in window
   : null;
 
 document.querySelectorAll(".reveal").forEach((el) => io ? io.observe(el) : el.classList.add("in"));
+
+const savedTheme = localStorage.getItem("hevify-theme");
+if (savedTheme === "dark") body.classList.add("theme-dark");
+themeToggle?.addEventListener("click", () => {
+  body.classList.toggle("theme-dark");
+  localStorage.setItem("hevify-theme", body.classList.contains("theme-dark") ? "dark" : "light");
+});
 
 function whatsappHref(text = WHATSAPP_TEXT) {
   return `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`;
@@ -118,6 +194,13 @@ document.addEventListener("click", (event) => {
       cat.classList.add("active");
     }
   }
+
+  const blogOpen = event.target.closest("[data-open-blog-dock]");
+  if (blogOpen) openDockSheet("blog");
+  const waOpen = event.target.closest("[data-open-wa-dock]");
+  if (waOpen) openDockSheet("wa");
+  if (event.target.closest("[data-close-blog-dock]")) closeDockSheet("blog");
+  if (event.target.closest("[data-close-wa-dock]")) closeDockSheet("wa");
 });
 
 window.addEventListener("resize", () => {
@@ -172,3 +255,97 @@ document.getElementById("mail-form")?.addEventListener("submit", (event) => {
   ].join("\n");
   window.open(whatsappHref(msg), "_blank", "noopener");
 });
+
+const dock = {
+  index: 0,
+  timer: null,
+  progressTimer: null
+};
+
+const dockTitle = document.querySelector("[data-dock-title]");
+const dockMeta = document.querySelector("[data-dock-meta]");
+const dockProgress = document.querySelector("[data-dock-progress]");
+const blogSheet = document.getElementById("blog-sheet");
+const waSheet = document.getElementById("wa-sheet");
+const blogSheetImage = document.querySelector("[data-sheet-image]");
+const blogSheetCategory = document.querySelector("[data-sheet-category]");
+const blogSheetTitle = document.querySelector("[data-sheet-title]");
+const blogSheetCopy = document.querySelector("[data-sheet-copy]");
+const blogSheetReading = document.querySelector("[data-sheet-reading]");
+const blogSheetCta = document.querySelector("[data-sheet-cta]");
+const waForm = document.getElementById("wa-sheet-form");
+
+function renderDockItem(index = dock.index) {
+  if (!dockTitle || !dockMeta || !blogSheetImage || !blogSheetCategory || !blogSheetTitle || !blogSheetCopy || !blogSheetReading || !blogSheetCta) return;
+  const item = DOCK_ITEMS[index % DOCK_ITEMS.length];
+  dockTitle.textContent = item.title;
+  dockMeta.textContent = `${item.category} · ${item.reading}`;
+  blogSheetImage.src = item.image;
+  blogSheetImage.alt = item.title;
+  blogSheetCategory.textContent = item.category;
+  blogSheetTitle.textContent = item.title;
+  blogSheetCopy.textContent = item.copy;
+  blogSheetReading.textContent = item.reading;
+  blogSheetCta.href = item.href;
+}
+
+function animateDockProgress() {
+  if (!dockProgress) return;
+  dockProgress.style.transition = "none";
+  dockProgress.style.width = "0%";
+  requestAnimationFrame(() => {
+    dockProgress.style.transition = `width ${DOCK_INTERVAL}ms linear`;
+    dockProgress.style.width = "100%";
+  });
+}
+
+function startDockRotation() {
+  stopDockRotation();
+  renderDockItem();
+  animateDockProgress();
+  dock.timer = window.setInterval(() => {
+    dock.index = (dock.index + 1) % DOCK_ITEMS.length;
+    renderDockItem(dock.index);
+    animateDockProgress();
+  }, DOCK_INTERVAL);
+}
+
+function stopDockRotation() {
+  if (dock.timer) clearInterval(dock.timer);
+  dock.timer = null;
+}
+
+function openDockSheet(kind) {
+  const sheet = kind === "blog" ? blogSheet : waSheet;
+  if (!sheet) return;
+  sheet?.classList.add("open");
+  sheet?.setAttribute("aria-hidden", "false");
+  stopDockRotation();
+}
+
+function closeDockSheet(kind) {
+  const sheet = kind === "blog" ? blogSheet : waSheet;
+  if (!sheet) return;
+  sheet?.classList.remove("open");
+  sheet?.setAttribute("aria-hidden", "true");
+  if (!blogSheet?.classList.contains("open") && !waSheet?.classList.contains("open")) startDockRotation();
+}
+
+waForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const name = document.getElementById("wa-name").value.trim();
+  const company = document.getElementById("wa-company").value.trim();
+  const message = document.getElementById("wa-message").value.trim();
+  const msg = [
+    "Hi Hevify,",
+    "",
+    name ? `Name: ${name}` : null,
+    company ? `Company: ${company}` : null,
+    `Message: ${message}`
+  ].filter(Boolean).join("\n");
+  window.open(whatsappHref(msg), "_blank", "noopener");
+});
+
+if (dockTitle && dockMeta && blogSheetImage && blogSheetCategory && blogSheetTitle && blogSheetCopy && blogSheetReading && blogSheetCta) {
+  startDockRotation();
+}
