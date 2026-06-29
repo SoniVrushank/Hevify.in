@@ -33,3 +33,32 @@
 .theme-dark .pkg-toggle,.theme-dark .btn-outline,.theme-dark .inline-links a,.theme-dark .modal-cats button{background:rgba(255,255,255,.05);color:#eff5eb;border-color:rgba(255,255,255,.1)}
 .theme-dark .glass-form input,.theme-dark .glass-form textarea,.theme-dark .contact-form input,.theme-dark .contact-form textarea,.theme-dark .contact-form select{background:#0f1210;color:#f2f6f1;border-color:rgba(255,255,255,.12)}
 .theme-dark .footer{border-top:1px solid rgba(255,255,255,.08)}
+:root{--paper:#f6f4ef;--paper-2:#fffdf8;--ink:#1a201b;--muted:#66706b;--line:rgba(74,124,89,.16);--glass:rgba(255,255,255,.58);--glass-strong:rgba(255,255,255,.72)}
+body{background:linear-gradient(180deg,#fbfaf7 0%,#f6f4ef 100%);color:var(--ink)}
+.site-nav,.glass-dock__pill,.glass-dock__wa,.glass-sheet__panel,.liquid-toggle{background:var(--glass)}
+.nav-links a,.btn-outline,.pkg-toggle,.modal-cats button,.glass-sheet__close,.modal-close{border-radius:999px}
+.hero,.band,.connect-band,.footer{background:linear-gradient(180deg,var(--paper-2),var(--paper))}
+.hero-copy,.section-head p,.soft-card p,.blog-card p,.package li,.contact-card p,.connect-box p,.review-card p,.pkg-card ul,.pkg-note,.glass-sheet__copy,.glass-sheet__meta{color:var(--muted)}
+.glass-sheet__backdrop{background:transparent;backdrop-filter:none}
+.glass-sheet.open .glass-sheet__panel{transform:translateX(-50%) translateY(-6px) scale(1)}
+.glass-sheet__panel{box-shadow:0 12px 30px rgba(16,24,16,.12),inset 0 1px 0 rgba(255,255,255,.72)}
+.theme-dark .site-nav,.theme-dark .glass-dock,.theme-dark .glass-sheet__panel{background:rgba(248,249,246,.66);color:var(--ink)}
+.theme-dark body{background:linear-gradient(180deg,#fbfaf7 0%,#f6f4ef 100%);color:var(--ink)}
+.theme-dark .hero,.theme-dark .band,.theme-dark .connect-band,.theme-dark .footer{background:linear-gradient(180deg,var(--paper-2),var(--paper))}
+.theme-dark .dark-band,.theme-dark .ai-band{background:linear-gradient(135deg,#edf4ea,#e4efe0,#eef4ea);color:var(--ink)}
+.theme-dark .dark-band .sec-label,.theme-dark .dark-band .section-head p,.theme-dark .ai-band .sec-label,.theme-dark .ai-band .section-head p{color:#4c6a57}
+.theme-dark .soft-card,.theme-dark .blog-card,.theme-dark .package,.theme-dark .contact-card,.theme-dark .quote-card,.theme-dark .faq,.theme-dark .folder-card,.theme-dark .connect-box,.theme-dark .review-card,.theme-dark .pkg-card,.theme-dark .team-card{background:rgba(255,255,255,.8);border-color:rgba(74,124,89,.14);box-shadow:0 8px 22px rgba(16,24,16,.08)}
+.theme-dark .stats{background:#fff8f2;border-color:rgba(74,124,89,.1)}
+.theme-dark .stats div{border-color:rgba(74,124,89,.1)}
+.theme-dark .stats span,.theme-dark .section-head p,.theme-dark .soft-card p,.theme-dark .blog-card p,.theme-dark .package li,.theme-dark .contact-card p,.theme-dark .connect-box p,.theme-dark .review-card p,.theme-dark .pkg-card ul,.theme-dark .pkg-note,.theme-dark .glass-sheet__copy,.theme-dark .glass-sheet__meta{color:#66706b}
+.theme-dark .service-row strong,.theme-dark .folder-card h3,.theme-dark .connect-box h3,.theme-dark .review-card strong,.theme-dark .pkg-card h4,.theme-dark .detail-modal h2,.theme-dark .section-head h2{color:#1a201b}
+.theme-dark .glass-pill,.theme-dark .liquid-toggle,.theme-dark .glass-sheet__panel,.theme-dark .glass-dock__pill,.theme-dark .glass-dock__wa{border-color:rgba(74,124,89,.16);background:rgba(255,255,255,.7)}
+.theme-dark .glass-sheet__close,.theme-dark .modal-close{background:#fff;color:#1a201b;border-color:rgba(74,124,89,.14)}
+.theme-dark .glass-sheet__image{background:rgba(74,124,89,.08)}
+.theme-dark .brand small,.theme-dark .glass-dock__content small,.theme-dark .glass-sheet__eyebrow,.theme-dark .glass-sheet__category,.theme-dark .nav-links a{color:#4a7c59}
+.theme-dark .glass-dock__pill{background:rgba(255,255,255,.78)}
+.theme-dark .glass-dock__wa{background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.6),rgba(37,211,102,.16))}
+.theme-dark .glass-dock__pill,.theme-dark .glass-dock__wa,.theme-dark .liquid-toggle{box-shadow:0 10px 22px rgba(16,24,16,.1)}
+.theme-dark .pkg-toggle,.theme-dark .btn-outline,.theme-dark .inline-links a,.theme-dark .modal-cats button{background:#fff;color:#1a201b;border-color:rgba(74,124,89,.14)}
+.theme-dark .glass-form input,.theme-dark .glass-form textarea,.theme-dark .contact-form input,.theme-dark .contact-form textarea,.theme-dark .contact-form select{background:#fff;color:#1a201b;border-color:rgba(74,124,89,.14)}
+.theme-dark .footer{border-top:1px solid rgba(74,124,89,.1)}
