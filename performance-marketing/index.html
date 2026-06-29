@@ -32,16 +32,20 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <nav class="site-nav" aria-label="Primary navigation">
+    <nav class="site-nav" aria-label="Primary navigation">
     <a class="brand" href="/" aria-label="Hevify Labs home">
       <img src="/favicon.webp" width="42" height="42" alt="" class="brand-mark">
       <span><strong>Hevify</strong><small>Labs</small></span>
     </a>
-
-    <ul id="nav-links" class="nav-links">
-      <li><a href="/">Home</a></li><li><a href="/#about">About</a></li><li><a href="/#services">Services</a></li><li><a href="/#team">Team</a></li><li><a href="/blog/">Blog</a></li><li><a href="/#contact">Contact</a></li>
-    </ul>
-    <button class="nav-cta" type="button" data-open-contact>Contact us</button>
+    <div class="nav-shell">
+      <ul id="nav-links" class="nav-links">
+        <li><a href="/">Home</a></li><li><a href="/#about">About</a></li><li><a href="/services/">Services</a></li><li><a href="/blog/">Blog</a></li><li><a href="/packages/">Packages</a></li><li><a href="/#contact">Contact</a></li>
+      </ul>
+      <a class="btn-outline" href="https://wa.me/+919429428370?text=Hi%20Hevify%20Labs%2C%20I%20want%20to%20discuss%20my%20requirements." target="_blank" rel="noopener" aria-label="Contact on WhatsApp">
+        <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.8-2.8-1.8-3.6-3.4-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"></path><path d="M12 2.1A9.9 9.9 0 0 0 3.6 17.2l-1 3.6 3.7-1a9.9 9.9 0 1 0 5.7-17.7zm0 17.7c-1.8 0-3.5-.6-4.9-1.6l-.4-.2-2.2.6.6-2.1-.2-.4A7.8 7.8 0 1 1 12 19.8z"></path></svg>
+      </a>
+      <button class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">?</button>
+    </div>
   </nav>
   <main id="main"><section class="hero">
     <div class="hero-bg-img" aria-hidden="true"></div>
@@ -87,7 +91,7 @@
       <h2 id="detail-title">Details</h2>
       <p id="detail-copy"></p>
       <div class="modal-cats" id="detail-cats"></div>
-      <ul id="detail-list"></ul>
+      <ul id="detail-list"></ul><a class="btn-outline" href="https://wa.me/+919429428370?text=Hi%20Hevify%20Labs%2C%20I%20want%20to%20discuss%20my%20requirements." target="_blank" rel="noopener" aria-label="Contact on WhatsApp"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.8-2.8-1.8-3.6-3.4-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"></path><path d="M12 2.1A9.9 9.9 0 0 0 3.6 17.2l-1 3.6 3.7-1a9.9 9.9 0 1 0 5.7-17.7zm0 17.7c-1.8 0-3.5-.6-4.9-1.6l-.4-.2-2.2.6.6-2.1-.2-.4A7.8 7.8 0 1 1 12 19.8z"></path></svg></a></div>
       <a class="btn-primary" id="detail-mail" href="https://wa.me/+919429428370?text=Hi%20Hevify%20Labs%2C%20I%20want%20to%20discuss%20my%20requirements.">Contact us about your requirement</a>
     </div>
   </div>
@@ -123,8 +127,8 @@
         <a class="glass-footer__link" href="/blog/">Blog</a>
         <a class="glass-footer__link" href="/packages/">Packages</a>
         <a class="glass-footer__link" href="/#contact">Contact</a>
-        <a class="glass-footer__wa btn-whatsapp" href="https://wa.me/+919429428370?text=Hi%20Hevify%20Labs%2C%20I%20want%20to%20discuss%20my%20requirements." target="_blank" rel="noopener" aria-label="Contact on WhatsApp">
-          <svg class="glass-footer__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.8-2.8-1.8-3.6-3.4-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"></path><path d="M12 2.1A9.9 9.9 0 0 0 3.6 17.2l-1 3.6 3.7-1a9.9 9.9 0 1 0 5.7-17.7zm0 17.7c-1.8 0-3.5-.6-4.9-1.6l-.4-.2-2.2.6.6-2.1-.2-.4A7.8 7.8 0 1 1 12 19.8z"></path></svg>
+        <a class="btn-outline" href="https://wa.me/+919429428370?text=Hi%20Hevify%20Labs%2C%20I%20want%20to%20discuss%20my%20requirements." target="_blank" rel="noopener" aria-label="Contact on WhatsApp">
+          <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.7-.8-2.8-1.8-3.6-3.4-.2-.3 0-.5.1-.7.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"></path><path d="M12 2.1A9.9 9.9 0 0 0 3.6 17.2l-1 3.6 3.7-1a9.9 9.9 0 1 0 5.7-17.7zm0 17.7c-1.8 0-3.5-.6-4.9-1.6l-.4-.2-2.2.6.6-2.1-.2-.4A7.8 7.8 0 1 1 12 19.8z"></path></svg>
           WhatsApp
         </a>
       </nav>

@@ -1,34 +1,13 @@
-const WHATSAPP_URL = "https://wa.me/919429428270";
+const WHATSAPP_URL = "https://wa.me/+919429428370";
 const WHATSAPP_TEXT = "Hi Hevify Labs, I want to discuss my requirements.";
 
-const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
-const nav = document.querySelector(".site-nav");
 
 function closeMenu() {
   navLinks?.classList.remove("open");
-  navLinks?.classList.remove("is-open");
-  navLinks?.classList.remove("w--open");
-  if (navLinks) {
-    navLinks.style.maxHeight = "";
-    navLinks.style.opacity = "";
-    navLinks.style.pointerEvents = "";
-  }
-  navToggle?.setAttribute("aria-expanded", "false");
 }
 
-navToggle?.addEventListener("click", function () {
-  if (navLinks?.classList.contains("open")) {
-    closeMenu();
-    return;
-  }
-  const open = navLinks.classList.toggle("open");
-  navLinks.style.maxHeight = "";
-  navLinks.style.opacity = "";
-  navLinks.style.pointerEvents = "";
-  this.setAttribute("aria-expanded", String(open));
-});
-
+const nav = document.querySelector(".site-nav");
 const onScroll = () => {
   nav?.classList.toggle("scrolled", window.scrollY > 24);
   if (navLinks?.classList.contains("open")) closeMenu();
@@ -38,11 +17,7 @@ onScroll();
 addEventListener("scroll", onScroll, { passive: true });
 
 document.addEventListener("click", (event) => {
-  if (
-    navLinks?.classList.contains("open") &&
-    !navLinks.contains(event.target) &&
-    !navToggle?.contains(event.target)
-  ) {
+  if (navLinks?.classList.contains("open") && !navLinks.contains(event.target)) {
     closeMenu();
   }
 });
@@ -71,29 +46,6 @@ document.querySelectorAll(".reveal").forEach((el) => io ? io.observe(el) : el.cl
 function whatsappHref(text = WHATSAPP_TEXT) {
   return `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`;
 }
-
-const savedTheme = localStorage.getItem("hevify-theme") || "light";
-document.documentElement.classList.toggle("dark-mode", savedTheme === "dark");
-
-function syncThemeControls() {
-  const dark = document.documentElement.classList.contains("dark-mode");
-  document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
-    btn.setAttribute("aria-pressed", String(dark));
-    const label = btn.querySelector("[data-theme-label]");
-    if (label) label.textContent = dark ? "Dark" : "Light";
-  });
-}
-
-syncThemeControls();
-
-document.addEventListener("click", (event) => {
-  const themeToggle = event.target.closest("[data-theme-toggle]");
-  if (!themeToggle) return;
-  const dark = !document.documentElement.classList.contains("dark-mode");
-  document.documentElement.classList.toggle("dark-mode", dark);
-  localStorage.setItem("hevify-theme", dark ? "dark" : "light");
-  syncThemeControls();
-});
 
 function hydrateDetailFromCard(card) {
   document.getElementById("detail-kicker").textContent = card.dataset.kicker || "Details";
@@ -168,6 +120,12 @@ document.addEventListener("click", (event) => {
   }
 });
 
+window.addEventListener("resize", () => {
+  document.querySelectorAll(".pkg-panel").forEach((panel) => {
+    if (panel.style.maxHeight) panel.style.maxHeight = `${panel.scrollHeight}px`;
+  });
+});
+
 document.querySelectorAll(".pkg-toggle").forEach((btn) => {
   btn.addEventListener("click", () => {
     const panel = btn.nextElementSibling;
@@ -187,6 +145,11 @@ document.querySelectorAll(".pkg-toggle").forEach((btn) => {
       btn.setAttribute("aria-expanded", "true");
     }
   });
+});
+
+document.querySelectorAll("img").forEach((img) => {
+  if (!img.hasAttribute("width")) img.setAttribute("width", img.naturalWidth || "1");
+  if (!img.hasAttribute("height")) img.setAttribute("height", img.naturalHeight || "1");
 });
 
 document.getElementById("mail-form")?.addEventListener("submit", (event) => {
