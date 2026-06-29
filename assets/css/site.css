@@ -578,16 +578,22 @@ section{padding-block:5rem}
   border-radius:inherit;
 }
 .glass-dock__wa{
-  width:64px;height:64px;border-radius:50%;
-  border:1px solid rgba(255,255,255,.42);
-  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.55),rgba(37,211,102,.18));
-  backdrop-filter:blur(22px) saturate(180%);
-  -webkit-backdrop-filter:blur(22px) saturate(180%);
-  box-shadow:0 0 0 1px rgba(37,211,102,.12),0 18px 34px rgba(37,211,102,.18),inset 0 1px 0 rgba(255,255,255,.68);
-  display:grid;place-items:center;color:#2aa05a;cursor:pointer;
+  /* WhatsApp as <a> tag — inline with the blog pill */
+  display:flex;align-items:center;gap:.4rem;
+  padding:.6rem 1rem;border-radius:var(--radius-pill);
+  border:1px solid rgba(37,211,102,.35);
+  background:linear-gradient(135deg,rgba(37,211,102,.25),rgba(37,211,102,.12));
+  backdrop-filter:blur(16px) saturate(180%);
+  -webkit-backdrop-filter:blur(16px) saturate(180%);
+  box-shadow:0 4px 16px rgba(37,211,102,.18),inset 0 1px 0 rgba(255,255,255,.5);
+  color:#1a6e3c;font-weight:700;font-size:.82rem;
+  text-decoration:none;white-space:nowrap;
+  transition:background .2s,transform .15s,box-shadow .2s;
   flex-shrink:0;
 }
-.glass-dock__wa svg{width:28px;height:28px;fill:currentColor}
+.glass-dock__wa:hover{background:linear-gradient(135deg,rgba(37,211,102,.35),rgba(37,211,102,.2));transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,.25)}
+.glass-dock__wa svg{width:18px;height:18px;fill:currentColor;flex-shrink:0}
+.glass-dock__wa-text{display:inline}
 
 /* ---------- Glass Footer (inner pages) ---------- */
 .glass-footer{
@@ -867,8 +873,9 @@ body.theme-dark .glass-dock__pill{
 }
 body.theme-dark .glass-dock__content small{color:#8a9888}
 body.theme-dark .glass-dock__wa{
-  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.1),rgba(37,211,102,.18));
-  box-shadow:0 0 0 1px rgba(37,211,102,.12),0 18px 34px rgba(37,211,102,.18),inset 0 1px 0 rgba(255,255,255,.2);
+  background:linear-gradient(135deg,rgba(37,211,102,.3),rgba(37,211,102,.18));
+  border-color:rgba(37,211,102,.4);
+  color:#5dce8a;
 }
 body.theme-dark .glass-dock{box-shadow:0 16px 34px rgba(0,0,0,.36)}
 body.theme-dark .glass-footer{
@@ -972,27 +979,7 @@ body.theme-dark .glass-dock__arrow{color:#9dc49c}
 
 /* Mobile */
 @media(max-width:720px){
-  body{padding-bottom:140px}
-
-  /* Nav hamburger */
-  .nav-hamburger{display:flex}
-  .nav-links{
-    display:none;position:absolute;top:calc(100% + .5rem);
-    left:50%;transform:translateX(-50%);
-    width:min(400px,calc(100vw - 2rem));
-    background:var(--glass-strong);
-    border:1px solid rgba(255,255,255,.6);
-    backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
-    border-radius:20px;padding:.5rem;
-    box-shadow:var(--shadow-lg);
-    flex-direction:column;gap:.1rem;
-  }
-  .nav-links.open{display:flex}
-  .glass-pill{
-    flex-direction:column;background:none;border:none;
-    box-shadow:none;padding:0;gap:.1rem;
-  }
-  .nav-links a{border-radius:12px;justify-content:flex-start;padding:.9rem 1rem}
+  body{padding-bottom:130px}
 
   .site-nav{
     width:min(1180px,calc(100vw - .8rem));
@@ -1018,14 +1005,13 @@ body.theme-dark .glass-dock__arrow{color:#9dc49c}
   .footer-grid{grid-template-columns:1fr}
   .section-head{margin-bottom:2rem}
 
-  .glass-dock{
-    width:calc(100vw - .8rem);bottom:10px;
-    flex-direction:column;align-items:stretch;
-  }
-  .glass-dock__pill{min-height:56px}
-  .glass-dock__wa{width:100%;height:56px;border-radius:16px;flex-direction:row;gap:.5rem}
-  .glass-dock__wa span:last-child{display:block}
-  .glass-dock__wa svg{width:22px;height:22px}
+  /* Glass dock: keep inline on mobile, just shrink padding */
+  .glass-dock{width:calc(100vw - .8rem);bottom:10px;gap:.5rem}
+  .glass-dock__pill{padding:.6rem .8rem;min-height:56px}
+  .glass-dock__content strong{font-size:.85rem}
+  .glass-dock__content small{font-size:.68rem}
+  .glass-dock__spark{width:28px;height:28px}
+  .glass-dock__wa{padding:.5rem .8rem;font-size:.78rem;min-height:44px}
 
   .glass-footer{
     width:calc(100vw - .8rem);bottom:10px;

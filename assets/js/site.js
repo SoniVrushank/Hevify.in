@@ -68,32 +68,11 @@ const DOCK_ITEMS = [
   }
 ];
 
-const navLinks = document.querySelector(".nav-links");
-const hamburger = document.querySelector(".nav-hamburger");
-
-function closeMenu() {
-  navLinks?.classList.remove("open");
-  hamburger?.setAttribute("aria-expanded", "false");
-}
-
-function toggleMenu() {
-  const isOpen = navLinks?.classList.contains("open");
-  if (isOpen) {
-    closeMenu();
-  } else {
-    navLinks?.classList.add("open");
-    hamburger?.setAttribute("aria-expanded", "true");
-  }
-}
-
-hamburger?.addEventListener("click", toggleMenu);
-
 const nav = document.querySelector(".site-nav");
 const themeToggle = document.querySelector(".theme-toggle");
 const body = document.body;
 const onScroll = () => {
   nav?.classList.toggle("scrolled", window.scrollY > 24);
-  if (navLinks?.classList.contains("open")) closeMenu();
 };
 
 onScroll();
@@ -101,7 +80,7 @@ addEventListener("scroll", onScroll, { passive: true });
 
 document.addEventListener("click", (event) => {
   if (navLinks?.classList.contains("open") && !navLinks.contains(event.target)) {
-    closeMenu();
+    navLinks.classList.remove("open");
   }
 });
 
