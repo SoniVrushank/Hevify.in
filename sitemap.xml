@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://hevify.in/</loc></url>
-  <url><loc>https://hevify.in/about/</loc></url>
-  <url><loc>https://hevify.in/services/</loc></url>
-  <url><loc>https://hevify.in/performance-marketing/</loc></url>
-  <url><loc>https://hevify.in/social-media-marketing/</loc></url>
-  <url><loc>https://hevify.in/seo-services/</loc></url>
-  <url><loc>https://hevify.in/paid-ads/</loc></url>
-  <url><loc>https://hevify.in/content-marketing/</loc></url>
-  <url><loc>https://hevify.in/lead-generation/</loc></url>
-  <url><loc>https://hevify.in/website-development/</loc></url>
-  <url><loc>https://hevify.in/branding/</loc></url>
-  <url><loc>https://hevify.in/packages/</loc></url>
-  <url><loc>https://hevify.in/case-studies/</loc></url>
-  <url><loc>https://hevify.in/blog/</loc></url>
-  <url><loc>https://hevify.in/blogs/performance-marketing-guide/</loc></url>
-  <url><loc>https://hevify.in/blogs/social-media-growth-strategy/</loc></url>
-  <url><loc>https://hevify.in/blogs/meta-ads-for-leads/</loc></url>
-  <url><loc>https://hevify.in/privacy-policy/</loc></url>
-  <url><loc>https://hevify.in/terms/</loc></url>
+  <url><loc>https://vrushanksoni.netlify.app/</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://vrushanksoni.netlify.app/projects.html</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://vrushanksoni.netlify.app/blog/</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://vrushanksoni.netlify.app/blog/seo-keywords-basics.html</loc><lastmod>2026-07-24</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vrushanksoni.netlify.app/blog/meta-ads-vs-google-ads.html</loc><lastmod>2026-07-24</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
 </urlset>

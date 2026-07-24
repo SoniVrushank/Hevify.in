@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hevify.in/sitemap.xml
+Sitemap: https://vrushanksoni.netlify.app/sitemap.xml
