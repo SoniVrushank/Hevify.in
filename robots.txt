@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vrushanksoni.netlify.app/sitemap.xml
+# AI answer engines welcome
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://hevify.in/sitemap.xml
