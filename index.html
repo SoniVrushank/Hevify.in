@@ -31,7 +31,7 @@
   "@context":"https://schema.org",
   "@graph":[
     {"@type":"Organization","@id":"https://hevify.in/#organization","name":"Hevify Labs","alternateName":["Hevify","Hevify.in"],"url":"https://hevify.in","logo":"https://hevify.in/favicon.webp","description":"Hevify Labs is a performance marketing and social media marketing agency in Ahmedabad, Gujarat, India.","email":"hello@hevify.in","founder":{"@id":"https://hevify.in/#vrushank-soni"},"sameAs":["https://www.instagram.com/hevify.in","https://www.linkedin.com/company/hevify-in"]},
-    {"@type":"Person","@id":"https://hevify.in/#vrushank-soni","name":"Vrushank Soni","jobTitle":"Founder & Digital Strategist","worksFor":{"@id":"https://hevify.in/#organization"}},
+    {"@type":"Person","@id":"https://hevify.in/#vrushank-soni","name":"Vrushank Soni","jobTitle":"Founder & Digital Strategist","worksFor":{"@id":"https://hevify.in/#organization"},"sameAs":["https://www.linkedin.com/in/vrushanksoni","https://www.instagram.com/vrushh_98/","https://vrushanksoni.netlify.app"]},
     {"@type":"LocalBusiness","@id":"https://hevify.in/#localbusiness","name":"Hevify Labs","image":"https://hevify.in/favicon.webp","url":"https://hevify.in","telephone":"+91-9429428270","priceRange":"₹₹","areaServed":["Ahmedabad","Gujarat","India","Global"],"address":{"@type":"PostalAddress","addressLocality":"Ahmedabad","addressRegion":"Gujarat","addressCountry":"IN"},"openingHours":"Mo-Sa 10:00-19:00"},
     {"@type":"Service","@id":"https://hevify.in/#performance","serviceType":"Performance Marketing","provider":{"@id":"https://hevify.in/#organization"},"areaServed":"India","description":"Meta Ads, Google Ads, retargeting and lead funnels built for measurable ROI."},
     {"@type":"Service","@id":"https://hevify.in/#social","serviceType":"Social Media Marketing","provider":{"@id":"https://hevify.in/#organization"},"description":"Content planning, reels, captions and community for consistent brand presence."},
@@ -46,205 +46,7 @@
 }
 </script>
 
-<style>
-:root{
-  --bg:#F7F6F3; --paper:#FFFFFF; --ink:#111113; --ink-dim:#5B5B60;
-  --line:#E7E5DF; --volt:#C6F24E; --volt-deep:#9FD11A; --rust:#E8622C; --blue:#2E5BFF;
-  --f-serif:'Instrument Serif',Georgia,serif; --f-sans:'Inter',system-ui,sans-serif; --f-mono:'IBM Plex Mono',monospace;
-  --wrap:1180px; --r:18px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--f-sans);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-/* subtle dotted texture */
-body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
-  background-image:radial-gradient(rgba(17,17,19,.05) 1px,transparent 1px);background-size:26px 26px}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-.eyebrow,.sec-label{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim)}
-.ink-dim{color:var(--ink-dim)}
-h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.08}
-
-/* CUSTOM CURSOR */
-@media (hover:hover) and (pointer:fine){
-  *{cursor:none}
-  .cursor-dot{position:fixed;top:0;left:0;width:7px;height:7px;border-radius:50%;background:var(--ink);z-index:9999;pointer-events:none;transform:translate(-50%,-50%)}
-  .cursor-ring{position:fixed;top:0;left:0;width:38px;height:38px;border:1.5px solid rgba(17,17,19,.4);border-radius:50%;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);transition:width .22s,height .22s,background .22s,border-color .22s,opacity .22s}
-  .cursor-ring.hot{width:64px;height:64px;background:rgba(198,242,78,.22);border-color:var(--volt-deep)}
-}
-.cursor-dot,.cursor-ring{display:none}
-@media (hover:hover) and (pointer:fine){.cursor-dot,.cursor-ring{display:block}}
-
-/* LOGO */
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.02em}
-.logo svg,.logo img{width:30px;height:30px;border-radius:9px;flex:none;object-fit:cover}
-
-/* NAV */
-.nav-shell{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.82);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
-.nav-shell.scrolled{border-color:var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:15px 24px;max-width:var(--wrap);margin:0 auto}
-.nav-links{display:flex;gap:28px;font-size:15px;font-weight:500}
-.nav-links a{color:var(--ink-dim);transition:color .2s;position:relative}
-.nav-links a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--volt);transition:width .25s}
-.nav-links a:hover{color:var(--ink)}.nav-links a:hover::after{width:100%}
-.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;padding:11px 20px;border-radius:100px;transition:transform .2s,background .2s,box-shadow .2s;border:1px solid transparent}
-.btn-volt{background:var(--ink);color:#fff}
-.btn-volt:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(17,17,19,.22)}
-.btn-outline{background:transparent;border-color:var(--ink);color:var(--ink)}
-.btn-outline:hover{background:var(--ink);color:#fff}
-@media(max-width:760px){.nav-links{display:none}}
-
-/* HERO */
-.hero{position:relative;max-width:var(--wrap);margin:0 auto;padding:70px 24px 46px;text-align:center}
-.blob{position:absolute;border-radius:50%;filter:blur(46px);opacity:.55;z-index:-1;animation:float 9s ease-in-out infinite}
-.blob.b1{width:320px;height:320px;background:var(--volt);top:-20px;left:-60px}
-.blob.b2{width:260px;height:260px;background:#bcd0ff;bottom:-40px;right:-40px;animation-delay:-3s}
-.blob.b3{width:200px;height:200px;background:#ffd0b8;top:120px;right:120px;animation-delay:-5s}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-24px)}}
-.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--paper);padding:7px 15px;border-radius:100px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;color:var(--ink-dim)}
-.pill b{color:var(--volt-deep)}
-.pulse{width:8px;height:8px;border-radius:50%;background:var(--volt-deep);box-shadow:0 0 0 0 rgba(159,209,26,.6);animation:pulse 2s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(159,209,26,0)}100%{box-shadow:0 0 0 0 rgba(159,209,26,0)}}
-.hero h1{font-size:clamp(46px,8.4vw,96px);margin:24px 0 0;letter-spacing:-.035em}
-.hero h1 .serif{font-family:var(--f-serif);font-weight:400;font-style:italic}
-.cycle{display:inline-block;color:var(--volt-deep);transition:opacity .22s}
-.hero-copy{max-width:56ch;margin:22px auto 0;font-size:clamp(17px,2.1vw,20px);color:var(--ink-dim)}
-.hero-actions{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap}
-.trust{margin-top:28px;display:inline-flex;gap:16px;flex-wrap:wrap;justify-content:center;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-dim)}
-.trust b{color:var(--ink)}
-
-/* COLORED CONNECTING STRIP */
-.strip{overflow:hidden;transform:rotate(-1.6deg);margin:0 -30px;padding:2px 0}
-.strip.flat{transform:none;margin:0}
-.strip .row{display:flex;gap:38px;white-space:nowrap;width:max-content;padding:13px 0;animation:slide 26s linear infinite}
-.strip .row.rev{animation-direction:reverse}
-.strip span{font-family:var(--f-mono);font-size:14px;font-weight:500;letter-spacing:.03em;display:inline-flex;align-items:center;gap:38px}
-.strip span::after{content:'✦'}
-.strip.volt{background:var(--volt);color:var(--ink)}
-.strip.dark{background:var(--ink);color:#fff}.strip.dark span::after{color:var(--volt)}
-.strip.rust{background:var(--rust);color:#fff}
-.strip.blue{background:var(--blue);color:#fff}
-@keyframes slide{to{transform:translateX(-50%)}}
-.strip-stack{display:flex;flex-direction:column;gap:0;margin:70px 0}
-
-/* SECTION */
-.section{position:relative;max-width:var(--wrap);margin:0 auto;padding:84px 24px}
-.section-head{max-width:62ch}
-.section-head h2{font-size:clamp(30px,4.4vw,50px);margin:14px 0 14px}
-.section-head h2 .serif{font-family:var(--f-serif);font-weight:400;font-style:italic}
-.num{font-family:var(--f-mono);font-size:12.5px;color:var(--volt-deep)}
-
-/* STATS */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);padding:34px;box-shadow:0 20px 50px rgba(17,17,19,.05)}
-.stat strong{display:block;font-family:var(--f-serif);font-size:clamp(34px,5vw,52px);font-weight:400;line-height:1}
-.stat span{font-size:14px;color:var(--ink-dim)}
-@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
-
-/* SERVICES */
-.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.service-card{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:30px;transition:transform .25s,box-shadow .25s,border-color .25s;overflow:hidden}
-.service-card::before{content:'';position:absolute;top:-40px;right:-40px;width:120px;height:120px;border-radius:50%;background:var(--volt);opacity:0;transition:opacity .3s;filter:blur(30px)}
-.service-card:hover::before{opacity:.35}
-.service-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(17,17,19,.09);border-color:#d9d6cd}
-.service-card.featured{background:var(--ink);color:#fff}
-.service-card.featured p{color:#b9b9bf}
-.svc-ico{width:46px;height:46px;border-radius:12px;background:var(--bg);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.featured .svc-ico{background:#22222a}
-.svc-ico svg{width:24px;height:24px}
-.service-tag{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--volt-deep)}
-.service-card h3{font-size:23px;margin:10px 0 10px}
-.service-tools{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
-.service-tools span{font-size:12.5px;padding:5px 11px;border:1px solid var(--line);border-radius:100px;color:var(--ink-dim)}
-.featured .service-tools span{border-color:#33333a;color:#c7c7cd}
-.price-row{display:flex;align-items:baseline;gap:10px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
-.featured .price-row{border-color:#2a2a30}
-.price-row strong{font-size:22px}.price-row small{font-size:12.5px;color:var(--ink-dim)}
-@media(max-width:760px){.service-grid{grid-template-columns:1fr}}
-
-/* PROCESS (new visual section) */
-.process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
-.step{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px;position:relative;transition:transform .25s}
-.step:hover{transform:translateY(-4px)}
-.step .n{font-family:var(--f-serif);font-size:44px;color:var(--volt-deep);line-height:1}
-.step h3{font-size:18px;margin:10px 0 8px}
-.step p{font-size:14px;color:var(--ink-dim)}
-@media(max-width:820px){.process{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.process{grid-template-columns:1fr}}
-
-/* FOUNDER */
-.founder{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:48px;position:relative;overflow:hidden}
-.founder h2{font-family:var(--f-serif);font-weight:400;font-size:clamp(28px,4vw,42px);line-height:1.12;margin-bottom:16px}
-.quote{font-family:var(--f-serif);font-size:22px;line-height:1.4;font-style:italic;border-left:3px solid var(--volt);padding-left:22px}
-@media(max-width:760px){.founder{grid-template-columns:1fr;padding:32px}}
-
-/* TEAM */
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.team-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:transform .25s,box-shadow .25s}
-.team-card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(17,17,19,.08)}
-.avatar{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--volt);font-weight:800;font-size:16px;color:var(--ink);margin-bottom:14px}
-.team-card:nth-child(2) .avatar{background:#bcd0ff}.team-card:nth-child(3) .avatar{background:#ffd0b8}
-.team-card:nth-child(5) .avatar{background:#d9c8ff}.team-card:nth-child(6) .avatar{background:#ffe08a}
-.team-card strong{display:block;font-size:17px}
-.team-card em{display:block;font-style:normal;font-size:13px;color:var(--volt-deep);font-family:var(--f-mono);margin:2px 0 10px}
-.team-card p{font-size:14px;color:var(--ink-dim)}
-@media(max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.team-grid{grid-template-columns:1fr}}
-
-/* REVIEWS */
-.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.review-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px}
-.stars{color:var(--volt-deep);letter-spacing:2px;margin-bottom:12px}
-.review-card p{font-size:15px}.review-card strong{display:block;margin-top:14px;font-size:14px;color:var(--ink-dim)}
-@media(max-width:820px){.review-grid{grid-template-columns:1fr}}
-
-/* BLOG */
-.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.insight-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .25s,box-shadow .25s}
-.insight-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(17,17,19,.09)}
-.insight-thumb{height:140px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.insight-thumb svg{width:100%;height:100%}
-.insight-body{padding:22px}
-.insight-body span{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--volt-deep)}
-.insight-body h3{font-size:18px;margin:8px 0 8px;line-height:1.25}
-.insight-body p{font-size:14px;color:var(--ink-dim)}
-.insight-body a{display:inline-block;margin-top:14px;font-weight:600;font-size:14px;border-bottom:2px solid var(--volt)}
-@media(max-width:820px){.insight-grid{grid-template-columns:1fr}}
-
-/* FAQ */
-.faq{max-width:820px;margin:0 auto}
-.faq details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:12px}
-.faq summary{font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:'+';color:var(--volt-deep);font-size:22px;line-height:1}
-.faq details[open] summary::after{content:'–'}
-.faq p{margin-top:12px;color:var(--ink-dim);font-size:15px}
-
-/* CONTACT */
-.contact{position:relative;text-align:center;background:var(--ink);color:#fff;border-radius:28px;max-width:calc(var(--wrap) - 48px);margin:0 auto 84px;padding:76px 24px;overflow:hidden}
-.contact .blob{opacity:.4}
-.contact h2{font-size:clamp(30px,5vw,54px);position:relative}
-.contact h2 .serif{font-family:var(--f-serif);font-weight:400;font-style:italic;color:var(--volt)}
-.contact p{color:#b9b9bf;max-width:46ch;margin:18px auto 30px;position:relative}
-.contact .btn-volt{background:var(--volt);color:var(--ink)}
-.contact .btn-outline{border-color:#44444c;color:#fff}
-.contact .btn-outline:hover{background:#fff;color:var(--ink)}
-
-/* FOOTER */
-.footer{background:var(--paper);border-top:1px solid var(--line);padding:56px 24px 30px}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:32px}
-.footer h4{font-size:13px;font-family:var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:14px}
-.footer-links a{display:block;font-size:14.5px;color:var(--ink-dim);margin-bottom:9px;transition:color .2s}
-.footer-links a:hover{color:var(--ink)}
-.social-row{display:flex;gap:10px;margin-top:16px}
-.social-row a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--ink-dim)}
-.social-row a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-.fine{text-align:center;margin-top:34px;font-size:13px;color:var(--ink-dim)}
-@media(max-width:760px){.footer-grid{grid-template-columns:1fr}}
-
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
-</style>
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
@@ -294,6 +96,7 @@ h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.08}
     <div class="stat"><strong class="count" data-count="95">0</strong><span>% Client retention</span></div>
     <div class="stat"><strong style="color:var(--volt-deep)">Ahmedabad</strong><span>India &amp; Global</span></div>
   </div>
+  <noscript><p style="text-align:center;color:var(--ink-dim);font-size:14px">12+ brands scaled · 3.8× average ROI · 95% client retention</p></noscript>
 </section>
 
 <section class="section" id="services" style="padding-top:24px">
@@ -303,38 +106,42 @@ h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.08}
     <p class="ink-dim">Packages start here — ad spend and hosting stay separate, so you always control your own budget.</p>
   </div>
   <div class="service-grid" style="margin-top:34px">
-    <div class="service-card reveal">
+    <a class="service-card reveal" href="performance-marketing-agency-ahmedabad.html">
       <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#9FD11A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
       <span class="service-tag">Performance Marketing</span>
       <h3>Paid that pays back</h3>
       <p>Meta Ads, Google Ads, retargeting, landing-page improvements, tracking and lead funnels built for measurable ROI.</p>
       <div class="service-tools"><span>Meta Ads</span><span>Google Ads</span><span>Retargeting</span><span>Lead Funnels</span></div>
-      <div class="price-row"><strong>₹8,000/mo</strong><small>starting · Full Performance ₹14,000/mo</small></div>
-    </div>
-    <div class="service-card reveal">
+      <div class="price-row"><strong>₹7,999/mo</strong><small>starting · Growth ₹11,999 · Premium ₹15,999</small></div>
+      <span style="display:inline-block;margin-top:12px;font-size:14px;font-weight:600;color:var(--volt-deep)">Learn more →</span>
+    </a>
+    <a class="service-card reveal" href="social-media-marketing-agency-ahmedabad.html">
       <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#9FD11A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="#9FD11A"/></svg></div>
       <span class="service-tag">Social Media Growth</span>
       <h3>Consistent, on-brand, everywhere</h3>
       <p>Content planning, reels, captions, ads management, profile optimisation and a consistent presence every week.</p>
       <div class="service-tools"><span>Reels Strategy</span><span>Content Calendar</span><span>Captions</span><span>Community</span></div>
-      <div class="price-row"><strong>₹10,000/mo</strong><small>starting · Pro ₹20,000/mo</small></div>
-    </div>
-    <div class="service-card reveal">
+      <div class="price-row"><strong>₹9,999/mo</strong><small>starting · Growth ₹14,999 · Premium ₹19,999</small></div>
+      <span style="display:inline-block;margin-top:12px;font-size:14px;font-weight:600;color:var(--volt-deep)">Learn more →</span>
+    </a>
+    <a class="service-card reveal" href="seo-geo-agency-ahmedabad.html">
       <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#9FD11A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div>
       <span class="service-tag">SEO &amp; GEO</span>
       <h3>Found on Google — and on AI search</h3>
       <p>Traditional SEO plus GEO for visibility on ChatGPT, Gemini and Perplexity, technical audits and fast websites.</p>
       <div class="service-tools"><span>SEO</span><span>GEO</span><span>Website</span><span>Structured Data</span></div>
-      <div class="price-row"><strong>₹6,000/mo</strong><small>starting · SEO+GEO Full ₹11,000/mo</small></div>
-    </div>
-    <div class="service-card featured reveal">
+      <div class="price-row"><strong>₹5,999/mo</strong><small>starting · Growth ₹9,999 · Premium ₹13,999</small></div>
+      <span style="display:inline-block;margin-top:12px;font-size:14px;font-weight:600;color:var(--volt-deep)">Learn more →</span>
+    </a>
+    <a class="service-card featured reveal" href="ai-automation-agency.html">
       <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#C6F24E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M9 7V4h6v3M9 13h.01M15 13h.01M12 1v3"/></svg></div>
       <span class="service-tag" style="color:var(--volt)">New — Agentic AI Builds</span>
       <h3>Let AI handle the repeats</h3>
       <p>Custom AI agents that automate lead follow-ups, reporting and scheduling — so your team focuses on growth, not busywork.</p>
       <div class="service-tools"><span>Lead Follow-ups</span><span>Reporting</span><span>Scheduling</span><span>Automation</span></div>
       <div class="price-row"><strong>Custom</strong><small style="color:#b9b9bf">free discovery call</small></div>
-    </div>
+      <span style="display:inline-block;margin-top:12px;font-size:14px;font-weight:600;color:var(--volt-deep)">Learn more →</span>
+    </a>
   </div>
 </section>
 
@@ -374,7 +181,7 @@ h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.08}
     <p class="ink-dim">A focused team working together on content, ads, SEO, websites, design, security and brand presence.</p>
   </div>
   <div class="team-grid" style="margin-top:34px">
-    <div class="team-card reveal"><span class="avatar">VS</span><strong>Vrushank Soni</strong><em>Founder &amp; Digital Strategist</em><p>Focuses on social media marketing, SEO, performance marketing and simple growth systems that build long-term authority.</p></div>
+    <div class="team-card reveal"><a class="card-hit" href="founder-vrushank-soni.html"><span class="avatar">VS</span><strong>Vrushank Soni</strong><em>Founder &amp; Digital Strategist</em><p>Focuses on social media marketing, SEO, performance marketing and simple growth systems that build long-term authority.</p><span style="display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--volt-deep)">Founder story →</span></a><div style="display:flex;gap:10px;margin-top:10px;font-size:13px;font-weight:600"><a href="https://www.linkedin.com/in/vrushanksoni" target="_blank" rel="noopener" style="color:var(--ink-dim)">LinkedIn</a><a href="https://www.instagram.com/vrushh_98/" target="_blank" rel="noopener" style="color:var(--ink-dim)">Instagram</a></div></div>
     <div class="team-card reveal"><span class="avatar">TJ</span><strong>Tirthesh Jain</strong><em>Head of Performance Marketing</em><p>Leads all paid campaigns with a sharp focus on Meta and Google Ads — audience building, creative testing, conversion optimisation.</p></div>
     <div class="team-card reveal"><span class="avatar">DP</span><strong>Dev Prajapati</strong><em>Content Writer</em><p>The content backbone — SEO blogs, captions, ad copy and long-form writing that blends keyword mapping with a clear voice.</p></div>
     <div class="team-card reveal"><span class="avatar">HS</span><strong>Herrin Shah</strong><em>Web Developer</em><p>Builds fast, conversion-focused websites — strong UI sense, Core Web Vitals and clean static architecture.</p></div>
@@ -405,13 +212,13 @@ h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.08}
     <p class="ink-dim">Lightweight reads on performance marketing, social growth, paid ads, SEO, GEO and lead generation.</p>
   </div>
   <div class="insight-grid" style="margin-top:34px">
-    <div class="insight-card reveal"><div class="insight-thumb"><svg viewBox="0 0 400 200" preserveAspectRatio="none"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C6F24E"/><stop offset="1" stop-color="#9FD11A"/></linearGradient></defs><rect width="400" height="200" fill="url(#g1)"/><path d="M0 150 L80 120 L160 140 L240 80 L320 100 L400 40" stroke="#111113" stroke-width="4" fill="none"/><circle cx="240" cy="80" r="7" fill="#111113"/></svg></div><div class="insight-body"><span>Guide</span><h3>Complete Guide to Performance Marketing</h3><p>Connect spend, message, landing page and revenue into one accountable system.</p><a href="blogs/performance-marketing-guide.html" data-hot>Read guide →</a></div></div>
-    <div class="insight-card reveal"><div class="insight-thumb"><svg viewBox="0 0 400 200" preserveAspectRatio="none"><rect width="400" height="200" fill="#111113"/><circle cx="130" cy="100" r="46" fill="none" stroke="#C6F24E" stroke-width="4"/><circle cx="130" cy="100" r="14" fill="#C6F24E"/><circle cx="285" cy="70" r="8" fill="#C6F24E"/><path d="M176 100 H340" stroke="#3a3a42" stroke-width="3"/></svg></div><div class="insight-body"><span>Guide</span><h3>Social Media Growth Strategy for Modern Brands</h3><p>Positioning, consistency and a point of view your audience remembers.</p><a href="blogs/social-media-growth-strategy.html" data-hot>Read guide →</a></div></div>
-    <div class="insight-card reveal"><div class="insight-thumb"><svg viewBox="0 0 400 200" preserveAspectRatio="none"><defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E8622C"/><stop offset="1" stop-color="#111113"/></linearGradient></defs><rect width="400" height="200" fill="url(#g3)"/><path d="M150 60 h100 v50 l-30 -18 v40 h-40 v-40 l-30 18 z" fill="#F7F6F3" opacity=".92"/></svg></div><div class="insight-body"><span>Guide</span><h3>Meta Ads for Lead Generation</h3><p>High-quality leads happen when offer, audience, creative and follow-up work together.</p><a href="blogs/meta-ads-for-leads.html" data-hot>Read guide →</a></div></div>
-    <div class="insight-card reveal"><div class="insight-thumb"><svg viewBox="0 0 400 200" preserveAspectRatio="none"><rect width="400" height="200" fill="#111113"/><rect x="150" y="70" width="100" height="60" rx="14" fill="none" stroke="#C6F24E" stroke-width="4"/><circle cx="178" cy="100" r="6" fill="#C6F24E"/><circle cx="222" cy="100" r="6" fill="#C6F24E"/><path d="M200 70 v-16 M200 54 h18" stroke="#C6F24E" stroke-width="4" fill="none"/></svg></div><div class="insight-body"><span>New</span><h3>GEO: How to Get Your Brand Recommended by AI Search</h3><p>Show up when people ask ChatGPT, Gemini and Perplexity for a recommendation.</p><a href="blogs/geo-ai-search-optimization.html" data-hot>Read guide →</a></div></div>
-    <div class="insight-card reveal"><div class="insight-thumb"><svg viewBox="0 0 400 200" preserveAspectRatio="none"><defs><linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E5BFF"/><stop offset="1" stop-color="#9FD11A"/></linearGradient></defs><rect width="400" height="200" fill="url(#g5)"/><path d="M200 46 c-26 0 -46 20 -46 46 c0 34 46 66 46 66 c0 0 46 -32 46 -66 c0 -26 -20 -46 -46 -46 z" fill="#F7F6F3"/><circle cx="200" cy="92" r="16" fill="#111113"/></svg></div><div class="insight-body"><span>Local</span><h3>Local SEO for Ahmedabad Businesses</h3><p>Rank in Google Maps and local search for customers near you.</p><a href="blogs/local-seo-ahmedabad.html" data-hot>Read guide →</a></div></div>
-    <div class="insight-card reveal"><div class="insight-thumb"><svg viewBox="0 0 400 200" preserveAspectRatio="none"><rect width="400" height="200" fill="#111113"/><rect x="120" y="120" width="34" height="40" fill="#2E5BFF"/><rect x="170" y="96" width="34" height="64" fill="#E8622C"/><rect x="220" y="72" width="34" height="88" fill="#C6F24E"/><rect x="270" y="52" width="34" height="108" fill="#9FD11A"/></svg></div><div class="insight-body"><span>Guide</span><h3>Google Ads for Small Businesses in India</h3><p>A budget-first way to win high-intent searches without wasting spend.</p><a href="blogs/google-ads-small-business-india.html" data-hot>Read guide →</a></div></div>
-  </div>
+    <a class="insight-card reveal" href="blogs/performance-marketing-guide.html" style="text-decoration:none;color:inherit;display:block"><div class="insight-body" style="padding:22px 22px 20px"><span style="display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.06em;color:#9FD11A;background:rgba(0,0,0,.04);border-radius:100px;padding:3px 10px;margin-bottom:10px">Guide</span><h3>Complete Guide to Performance Marketing</h3><p>Connect spend, message, landing page and revenue into one accountable system.</p><span style="display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--volt-deep)">Read guide →</span></div></a>
+    <a class="insight-card reveal" href="blogs/social-media-growth-strategy.html" style="text-decoration:none;color:inherit;display:block"><div class="insight-body" style="padding:22px 22px 20px"><span style="display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.06em;color:#9FD11A;background:rgba(0,0,0,.04);border-radius:100px;padding:3px 10px;margin-bottom:10px">Guide</span><h3>Social Media Growth Strategy for Modern Brands</h3><p>Positioning, consistency and a point of view your audience remembers.</p><span style="display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--volt-deep)">Read guide →</span></div></a>
+    <a class="insight-card reveal" href="blogs/meta-ads-for-leads.html" style="text-decoration:none;color:inherit;display:block"><div class="insight-body" style="padding:22px 22px 20px"><span style="display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.06em;color:#9FD11A;background:rgba(0,0,0,.04);border-radius:100px;padding:3px 10px;margin-bottom:10px">Guide</span><h3>Meta Ads for Lead Generation</h3><p>High-quality leads happen when offer, audience, creative and follow-up work together.</p><span style="display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--volt-deep)">Read guide →</span></div></a>
+    <a class="insight-card reveal" href="blogs/geo-ai-search-optimization.html" style="text-decoration:none;color:inherit;display:block"><div class="insight-body" style="padding:22px 22px 20px"><span style="display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.06em;color:#C6F24E;background:rgba(0,0,0,.04);border-radius:100px;padding:3px 10px;margin-bottom:10px">New</span><h3>GEO: How to Get Your Brand Recommended by AI Search</h3><p>Show up when people ask ChatGPT, Gemini and Perplexity for a recommendation.</p><span style="display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--volt-deep)">Read guide →</span></div></a>
+    <a class="insight-card reveal" href="blogs/local-seo-ahmedabad.html" style="text-decoration:none;color:inherit;display:block"><div class="insight-body" style="padding:22px 22px 20px"><span style="display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.06em;color:#2E5BFF;background:rgba(0,0,0,.04);border-radius:100px;padding:3px 10px;margin-bottom:10px">Local</span><h3>Local SEO for Ahmedabad Businesses</h3><p>Rank in Google Maps and local search for customers near you.</p><span style="display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--volt-deep)">Read guide →</span></div></a>
+    <a class="insight-card reveal" href="blogs/google-ads-small-business-india.html" style="text-decoration:none;color:inherit;display:block"><div class="insight-body" style="padding:22px 22px 20px"><span style="display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.06em;color:#9FD11A;background:rgba(0,0,0,.04);border-radius:100px;padding:3px 10px;margin-bottom:10px">Guide</span><h3>Google Ads for Small Businesses in India</h3><p>A budget-first way to win high-intent searches without wasting spend.</p><span style="display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--volt-deep)">Read guide →</span></div></a>
+  <a class="insight-card reveal" href="blogs/best-performance-marketing-agency-ahmedabad.html" style="text-decoration:none;color:inherit;display:block"><div class="insight-body" style="padding:22px 22px 20px"><span style="display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.06em;color:#9FD11A;background:rgba(0,0,0,.04);border-radius:100px;padding:3px 10px;margin-bottom:10px">Guide</span><h3>Best Performance Marketing Agency in Ahmedabad</h3><p>A practical checklist for choosing the right agency — and the red flags worth walking away from.</p><span style="display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--volt-deep)">Read guide →</span></div></a><a class="insight-card reveal" href="blogs/how-to-choose-the-right-marketing-partner.html" style="text-decoration:none;color:inherit;display:block"><div class="insight-body" style="padding:22px 22px 20px"><span style="display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.06em;color:#9FD11A;background:rgba(0,0,0,.04);border-radius:100px;padding:3px 10px;margin-bottom:10px">Guide</span><h3>How to Choose the Right Marketing Partner</h3><p>A real pattern we've seen, and exactly what to check before you pay anyone.</p><span style="display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--volt-deep)">Read guide →</span></div></a><a class="insight-card reveal" href="blogs/why-we-publish-our-prices.html" style="text-decoration:none;color:inherit;display:block"><div class="insight-body" style="padding:22px 22px 20px"><span style="display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.06em;color:#E8622C;background:rgba(0,0,0,.04);border-radius:100px;padding:3px 10px;margin-bottom:10px">Values</span><h3>Why We Publish Our Prices</h3><p>Most agencies don't. Here's why we think hiding pricing wastes everyone's time.</p><span style="display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--volt-deep)">Read guide →</span></div></a><a class="insight-card reveal" href="blogs/what-we-turn-down.html" style="text-decoration:none;color:inherit;display:block"><div class="insight-body" style="padding:22px 22px 20px"><span style="display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.06em;color:#E8622C;background:rgba(0,0,0,.04);border-radius:100px;padding:3px 10px;margin-bottom:10px">Values</span><h3>What We Turn Down (And Why)</h3><p>Not every project is a fit — here's what we say no to, and why.</p><span style="display:inline-block;margin-top:10px;font-size:14px;font-weight:600;color:var(--volt-deep)">Read guide →</span></div></a></div>
 </section>
 
 <section class="section" id="faq" style="padding-top:24px">
@@ -426,6 +233,7 @@ h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.08}
     <details><summary>What is GEO and do I need it?</summary><p>GEO (Generative Engine Optimization) helps AI tools like ChatGPT, Gemini and Perplexity recommend your brand when people ask them questions. As search shifts toward AI answers, GEO works alongside traditional SEO to keep you visible.</p></details>
     <details><summary>How soon will I see results?</summary><p>Paid ads can show signal within the first few weeks; SEO and GEO typically build over 3–6 months. We set clear expectations and report against the metrics that matter to your business.</p></details>
   </div>
+  <p style="text-align:center;margin-top:20px"><a href="faq.html" style="font-size:14px;font-weight:600;color:var(--volt-deep)" data-hot>See all FAQs →</a></p>
 </section>
 
 <section class="contact" id="contact">
@@ -455,10 +263,10 @@ h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.08}
     </div>
     <div class="footer-links">
       <h4>Services</h4>
-      <a href="#services">Performance Marketing</a>
-      <a href="#services">Social Media Growth</a>
-      <a href="#services">SEO &amp; GEO</a>
-      <a href="#services">AI Automation</a>
+      <a href="performance-marketing-agency-ahmedabad.html">Performance Marketing</a>
+      <a href="social-media-marketing-agency-ahmedabad.html">Social Media Growth</a>
+      <a href="seo-geo-agency-ahmedabad.html">SEO &amp; GEO</a>
+      <a href="ai-automation-agency.html">AI Automation</a>
     </div>
     <div class="footer-links">
       <h4>Company</h4>
@@ -466,36 +274,21 @@ h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.08}
       <a href="#team">Team</a>
       <a href="#insights">Blog</a>
       <a href="#faq">FAQ</a>
+      <a href="faq.html">All FAQs</a>
+      <a href="hevify-brochure.pdf" target="_blank" rel="noopener">Download Brochure</a>
     </div>
   </div>
   <p class="fine">© 2026 Hevify Labs. All rights reserved. · Ahmedabad, Gujarat, India</p>
 </footer>
 
+<script src="assets/site.js" defer></script>
 <script>
-// custom cursor
-(function(){
-  const dot=document.getElementById('cDot'),ring=document.getElementById('cRing');
-  if(!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
-  let mx=0,my=0,rx=0,ry=0;
-  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
-  (function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
-  const hot='a,button,.btn,.service-card,.team-card,.insight-card,.step,summary,[data-hot]';
-  document.querySelectorAll(hot).forEach(el=>{el.addEventListener('mouseenter',()=>ring.classList.add('hot'));el.addEventListener('mouseleave',()=>ring.classList.remove('hot'))});
-  addEventListener('mousedown',()=>ring.style.opacity=.5);addEventListener('mouseup',()=>ring.style.opacity=1);
-})();
-// scroll reveal
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-// nav border
-const nav=document.getElementById('siteNav');
-addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
-// count up
-function countUp(el,t,dec){let s=null;const d=1400;function step(n){if(!s)s=n;const p=Math.min((n-s)/d,1);const v=t*p;el.textContent=dec?v.toFixed(1):Math.floor(v);if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
-const co=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){const el=e.target;countUp(el,parseFloat(el.dataset.count),el.classList.contains('count-decimal'));co.unobserve(el)}})},{threshold:.5});
-document.querySelectorAll('.count,.count-decimal').forEach(el=>co.observe(el));
-// hero word cycle
-const words=['grow.','convert.','scale.','last.'];let i=0;const cw=document.getElementById('cycleWord');
-setInterval(()=>{i=(i+1)%words.length;cw.style.opacity=0;setTimeout(()=>{cw.textContent=words[i];cw.style.opacity=1},220)},2200);
+// hero word cycle (homepage-only)
+addEventListener('DOMContentLoaded', function(){
+  var words=['grow.','convert.','scale.','last.'];var i=0;var cw=document.getElementById('cycleWord');
+  if(!cw) return;
+  setInterval(function(){ i=(i+1)%words.length; cw.style.opacity=0; setTimeout(function(){ cw.textContent=words[i]; cw.style.opacity=1; },220); },2200);
+});
 </script>
 </body>
 </html>
